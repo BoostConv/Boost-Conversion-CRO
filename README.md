@@ -40,7 +40,7 @@ audite cette page : https://exemple.com/produit
 
 ## Philosophie
 
-Méthode CRO générique éprouvée (clarté, preuve, renversement du risque,
+Méthode CRO éprouvée (clarté, preuve, renversement du risque,
 traitement des objections), volontairement simple et réutilisable.
 Sorties en HTML autoportant : ouvrables direct dans un navigateur, zéro
 build, faciles à héberger n'importe où.
@@ -52,7 +52,7 @@ Conversion** (Méthode Océan Vert, déploiement Shopify/Vercel, tracking
 de conversion, dashboard analytics, A/B tests, accompagnement consultant)
 n'est pas incluse ici.
 
-→ Pour la version pro et l'accompagnement : **[à compléter — URL Boost Conversion]**
+→ Pour la version pro et l'accompagnement : **https://www.boostconversion.fr/rendez-vous?utm_source=github**
 
 ---
 
