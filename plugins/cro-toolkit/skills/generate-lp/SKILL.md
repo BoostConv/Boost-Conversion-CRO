@@ -11,7 +11,10 @@ description: >
 
 > Skill 100% autonome. Aucune lecture de fichier projet : tout le contexte
 > est demandé à l'utilisateur. Sortie = un fichier `.html` autoportant
-> (CSS inline, responsive, zéro build, ouvrable directement dans un navigateur).
+> (CSS inline, responsive, CTA sticky mobile, zéro build).
+>
+> **Mode rapide** : si l'utilisateur ajoute `--fast` ou dit "sans validation",
+> saute les checkpoints de validation (Étapes 3 et 4) et livre directement.
 
 ## Quand utiliser
 
@@ -19,21 +22,32 @@ description: >
 - L'utilisateur dit "génère / crée / fais une LP / landing / page de vente"
 - L'utilisateur décrit un produit et veut une page pour le vendre
 
-## Étape 1 — Cadrage (questions obligatoires)
+> **Dossier Prospect (optionnel)** : si `ocean-vert-prospect.md` existe
+> dans le projet, lis-le — il remplace la plupart des questions de l'Étape 1.
+> Sans ce fichier, ce skill fonctionne de façon entièrement autonome.
 
-Ne RIEN écrire avant d'avoir ces réponses. Pose-les groupées :
+## Étape 1 — Cadrage (questions obligatoires + optionnelles)
+
+Ne RIEN écrire avant d'avoir les réponses essentielles.
+
+### Questions essentielles (pose-les groupées — sans ces 4, impossible de continuer)
 
 1. **Produit** : qu'est-ce que c'est, que fait-il concrètement ?
-2. **Cible** : à qui ça s'adresse (âge, situation, niveau de conscience du problème) ?
+2. **Cible** : à qui ça s'adresse (situation, niveau de conscience du problème) ?
 3. **Douleur n°1** : le problème principal que vit le client avant d'acheter ?
-4. **Transformation** : à quoi ressemble sa vie après ?
-5. **Preuve** : avis, chiffres, certifications, médias, nombre de clients ?
-6. **Offre** : prix, promo, bundle, livraison, garantie ?
-7. **Angle** : un mécanisme/ingrédient/différenciateur unique à mettre en avant ?
-8. **Ton** : premium, fun, expert, chaleureux ?
+4. **Offre** : prix, promo, bundle, livraison, garantie ?
 
-Si une réponse manque, propose une hypothèse explicite et demande validation —
-ne jamais inventer une preuve chiffrée ou une allégation santé.
+### Questions optionnelles (si non fournies, utilise les valeurs par défaut ci-dessous)
+
+| Question | Valeur par défaut si absent |
+|---|---|
+| **Transformation** : à quoi ressemble la vie après ? | Déduite du produit + douleur |
+| **Preuve** : avis, chiffres, certifications, médias ? | Section preuve avec placeholders `[AVIS À AJOUTER]` |
+| **Angle** : mécanisme/ingrédient/différenciateur unique ? | Bénéfice principal du produit |
+| **Ton** : premium, fun, expert, chaleureux ? | Neutre/professionnel |
+
+Signale à l'utilisateur les valeurs par défaut utilisées — ne jamais inventer
+une preuve chiffrée ou une allégation santé.
 
 ## Étape 2 — Choix de la structure
 
@@ -47,6 +61,8 @@ Choisis le squelette selon le niveau de conscience de la cible :
 | Sceptique / produit technique | **Mécanisme** : pourquoi ça marche → preuve → offre |
 
 ## Étape 3 — Écrire le copy (checkpoint validation)
+
+> **Mode rapide** : si `--fast`, saute ce checkpoint et passe directement à l'Étape 4.
 
 Rédige le copy section par section selon l'anatomie haute conversion :
 
@@ -73,33 +89,48 @@ Avant de présenter le copy, relis-le et signale tout :
 - Allégation santé/thérapeutique non prouvée (« guérit », « soigne »)
 - Superlatif non étayé (« le meilleur », « n°1 ») sans source
 - Promesse de résultat garanti irréaliste
+
 Propose une reformulation conforme et signale-la à l'utilisateur.
 
 ## Étape 4 — Générer le HTML autonome
 
+> **Mode rapide** : si `--fast`, génère directement sans attendre de validation copy.
+
 Produis **un seul fichier `.html`** :
+- **`<head>` complet** :
+  - `<title>[Promesse principale du hero]</title>`
+  - `<meta name="description" content="[Bénéfice + cible + offre en 150 car.]">`
+  - `<meta charset="UTF-8">`, `<meta name="viewport" content="width=device-width, initial-scale=1">`
 - CSS **inline dans `<style>`** (aucune lib externe, aucune CDN obligatoire)
 - Responsive mobile-first (breakpoint 768px)
+- **CTA sticky sur mobile** : `position: fixed; bottom: 0;` visible uniquement sous 768px,
+  disparaît si le hero est visible à l'écran (évite la double lecture)
 - Sémantique (`<header> <section> <footer>`), accessible (contrastes, alt)
 - Placeholders images : `<div>` avec ratio + texte descriptif si pas d'URL
 - Boutons CTA pointant vers une variable `[LIEN_ACHAT]` à remplacer
 - Performance : pas de police lourde, SVG inline pour les icônes
 
-Nomme le fichier `lp-[produit-slug].html` et indique à l'utilisateur comment
-l'ouvrir (double-clic) et où remplacer `[LIEN_ACHAT]` et les visuels.
+Nomme le fichier `lp-[produit-slug].html` et indique à l'utilisateur :
+1. Comment l'ouvrir (double-clic)
+2. Où remplacer `[LIEN_ACHAT]` et les visuels
+3. Que `<title>` et `<meta description>` sont pré-remplis mais à ajuster
 
 ## Étape 5 — Contrôle qualité (avant de livrer)
 
 Vérifie et rapporte :
 - [ ] Promesse compréhensible en 5 s dans le hero
 - [ ] 1 seule action principale (CTA cohérent partout)
-- [ ] Preuve sociale présente et crédible
+- [ ] CTA sticky mobile présent et non intrusif
+- [ ] `<title>` et `<meta description>` renseignés
+- [ ] Preuve sociale présente (ou placeholders explicites)
 - [ ] Objections principales traitées (FAQ)
 - [ ] Garantie / renversement du risque visible
 - [ ] Mobile lisible (test mental du rendu < 768px)
 - [ ] 0 allégation interdite
 
 ---
+
+**Enchaîner :** `cro-audit` pour scorer la page livrée · `analyze-reviews` si tu veux améliorer le copy avec de vrais verbatims clients.
 
 *Ce skill fait partie du **CRO Toolkit** par Boost Conversion.*
 *Version pro (méthode complète, déploiement Shopify/Vercel, tracking
