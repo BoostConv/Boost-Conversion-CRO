@@ -4,14 +4,14 @@
     "name": "Boost Conversion"
   },
   "metadata": {
-    "description": "Skills CRO e-commerce pour Claude Code — landing pages, advertorials, audit conversion, analyse d'avis.",
-    "version": "0.1.0"
+    "description": "Skill CRO pour Claude Code — génère une landing page e-commerce haute conversion (Méthode Océan Vert).",
+    "version": "0.2.0"
   },
   "plugins": [
     {
       "name": "cro-toolkit",
       "source": "./plugins/cro-toolkit",
-      "description": "5 skills CRO autonomes : générer une LP haute conversion, cloner une LP, écrire un advertorial, auditer une page (score /100), analyser des avis clients. 100% standalone, aucune dépendance externe."
+      "description": "1 skill CRO autonome : générer une landing page e-commerce haute conversion en un seul fichier HTML (Méthode Océan Vert). 100% standalone, aucune dépendance externe."
     }
   ]
 }

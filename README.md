@@ -1,35 +1,33 @@
-# CRO Toolkit pour Claude Code
+# generate-lp — Landing page haute conversion pour Claude Code
 
-5 skills CRO e-commerce **100% autonomes** pour Claude Code. Aucune
-dépendance, aucun compte, aucune clé API. Tu décris ton produit, Claude
-te sort des pages qui convertissent.
+**Un seul skill, 100% autonome.** Tu décris ton produit, Claude te génère une
+**landing page e-commerce haute conversion** dans un seul fichier HTML — aucune
+dépendance, aucun compte, aucune clé API. Ouvrable directement dans un navigateur.
 
-| Skill | Ce qu'il fait |
-|-------|---------------|
-| **generate-lp** | Génère une landing page haute conversion (1 fichier HTML autonome) |
-| **reproduce-lp** | Clone ou adapte une LP existante depuis une URL / screenshots |
-| **advertorial** | Écrit un advertorial éditorial qui vend sans avoir l'air d'une pub |
-| **cro-audit** | Audite une page → score /100 + plan d'action priorisé |
-| **analyze-reviews** | Extrait angles, objections et verbatims des avis clients |
+Basé sur la **Méthode Océan Vert** de [Boost Conversion](https://www.boostconversion.fr) :
+diagnostic du niveau de conscience de ta cible, structure de page raisonnée, copy qui
+nomme l'ennemi du client, et un rendu visuel premium par défaut.
+
+## Ce que fait le skill
+
+- **Diagnostic stratégique** affiché avant d'écrire (niveau de conscience, structure, angle)
+- **Copy haute conversion** : hero, preuve sociale, offre, garantie, FAQ qui traite les objections
+- **Design premium** : design system complet (typo fluide, hero soigné, animations sobres), responsive, CTA sticky mobile
+- **Sortie = 1 fichier `.html` autoportant**, prêt à héberger n'importe où
 
 ## Installation (2 commandes)
 
 Dans Claude Code :
 
 ```
-/plugin marketplace add boostconv/cro-toolkit
+/plugin marketplace add BoostConv/Boost-Conversion-CRO
 /plugin install cro-toolkit
 ```
 
-> Remplace `boostconv/cro-toolkit` par le slug réel du repo GitHub public
-> où ce dossier est publié.
-
-Puis lance `/cro` ou décris directement ton besoin :
+Puis décris simplement ton produit :
 
 ```
-/cro
-génère une LP pour ma crème solaire bio
-audite cette page : https://exemple.com/produit
+génère une LP pour ma crème solaire bio destinée aux sportifs
 ```
 
 ## Désinstallation
@@ -38,19 +36,11 @@ audite cette page : https://exemple.com/produit
 /plugin uninstall cro-toolkit
 ```
 
-## Philosophie
-
-Méthode CRO éprouvée (clarté, preuve, renversement du risque,
-traitement des objections), volontairement simple et réutilisable.
-Sorties en HTML autoportant : ouvrables direct dans un navigateur, zéro
-build, faciles à héberger n'importe où.
-
 ## Aller plus loin
 
-Ce toolkit est la version libre. La méthode complète de **Boost
-Conversion** (Méthode Océan Vert, déploiement Shopify/Vercel, tracking
-de conversion, dashboard analytics, A/B tests, accompagnement consultant)
-n'est pas incluse ici.
+Ce skill est la version libre. La méthode complète de **Boost Conversion**
+(Méthode Océan Vert intégrale, advertorials, audit conversion, déploiement
+Shopify/Vercel, tracking, A/B tests, accompagnement consultant) n'est pas incluse ici.
 
 → Pour la version pro et l'accompagnement : **https://www.boostconversion.fr/rendez-vous?utm_source=github**
 

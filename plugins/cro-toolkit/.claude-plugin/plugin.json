@@ -1,7 +1,7 @@
 {
   "name": "cro-toolkit",
-  "version": "0.1.0",
-  "description": "Suite de skills CRO e-commerce 100% autonomes pour Claude Code : génération de landing pages haute conversion, clonage de LP, advertorials, audit de page (score /100) et analyse d'avis clients. Méthode CRO générique, aucune dépendance externe.",
+  "version": "0.2.0",
+  "description": "Skill CRO e-commerce 100% autonome pour Claude Code : génère une landing page haute conversion en un seul fichier HTML, à partir d'une simple description produit. Méthode Océan Vert, aucune dépendance externe.",
   "author": {
     "name": "Boost Conversion"
   },
